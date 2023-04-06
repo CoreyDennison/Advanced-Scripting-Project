@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "as_django.apps.AsDjangoConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -75,8 +76,12 @@ WSGI_APPLICATION = "as_project.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": 'django_project',
+        'USER': 'root',
+        'PASSWORD': 'corey',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
     }
 }
 
