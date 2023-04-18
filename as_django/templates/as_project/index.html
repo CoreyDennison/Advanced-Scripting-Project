@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Attendance App</title>
+</head>
+    <body>
+        <h1>Student Attendance App</h1>
+        <h3>Students</h3>
+        <table border="1">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Student Number</th>
+                <th>Course</th>
+            </tr>
+        {% for person in students %}
+            <tr>
+                <td>{{ person.first_name }}</td>
+                <td>{{ person.last_name }}</td>
+                <td>{{ person.student_number }}</td>
+                <td>{{ person.course }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+        <br>
+        <h3>Attendance Record</h3>
+        <table border="1">
+            <tr>
+                <th>Date</th>
+                <th>Student 1 present?</th>
+                <th>Student 2 present?</th>
+                <th>Student 3 present?</th>
+                <th>Student 4 present?</th>
+                <th>Student 5 present?</th>
+            </tr>
+        {% for record in attendance %}
+            <tr>
+                <td>{{ record.class_date }}</td>
+                <td>{{ record.student1_present }}</td>
+                <td>{{ record.student2_present }}</td>
+                <td>{{ record.student3_present }}</td>
+                <td>{{ record.student4_present }}</td>
+                <td>{{ record.student5_present }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    </body>
+</html>
