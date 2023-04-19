@@ -11,5 +11,4 @@ def index_view(request):
         'students': student_table,
         'attendance': attendance_table,
     }
-
     return HttpResponse(template.render(context,request))
