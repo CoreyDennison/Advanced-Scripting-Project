@@ -39,20 +39,18 @@
         <table border="1">
             <tr>
                 <th>Date</th>
-                <th>Student 1 present?</th>
-                <th>Student 2 present?</th>
-                <th>Student 3 present?</th>
-                <th>Student 4 present?</th>
-                <th>Student 5 present?</th>
+                {% for person in students %}
+                <th>{{ person.first_name }} {{ person.last_name }}</th>
+                {% endfor %}
             </tr>
         {% for record in attendance %}
             <tr>
                 <td>{{ record.class_date }}</td>
-                <td>{{ record.student1_present }}</td>
-                <td>{{ record.student2_present }}</td>
-                <td>{{ record.student3_present }}</td>
-                <td>{{ record.student4_present }}</td>
-                <td>{{ record.student5_present }}</td>
+                <td>{{ record.john_present }}</td>
+                <td>{{ record.michael_present }}</td>
+                <td>{{ record.beth_present }}</td>
+                <td>{{ record.nick_present }}</td>
+                <td>{{ record.michael_present }}</td>
             </tr>
         {% endfor %}
         </table>
@@ -60,7 +58,7 @@
         <h3>Student Role Call</h3>
         <form action="" method="post">{% csrf_token %}
             {% for person in students%}
-            <input type="checkbox" name="{{ person.first_name }}_is_present"  checked="y">
+            <input type="checkbox" name="{{ person.first_name }}_is_present" checked="y">
             <label>{{person.first_name}} {{person.last_name}}</label>
             <br>
             {% endfor %}

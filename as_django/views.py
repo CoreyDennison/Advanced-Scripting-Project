@@ -20,13 +20,13 @@ def index_view(request):
         Mark_is_present = request.POST.get('Mark_is_present', 'n')
 
         attendance_entry = attendance(
-            student1_present = John_is_present,
-            student2_present = Michael_is_present,
-            student3_present = Beth_is_present,
-            student4_present = Nick_is_present,
-            student5_present = Mark_is_present
+            john_present = John_is_present,
+            michael_present = Michael_is_present,
+            beth_present = Beth_is_present,
+            nick_present = Nick_is_present,
+            mark_present = Mark_is_present
         )
-        attendance_entry.save()
 
+        attendance_entry.save()
 
     return HttpResponse(template.render(context,request))
