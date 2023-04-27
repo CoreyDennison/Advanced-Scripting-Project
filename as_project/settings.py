@@ -29,7 +29,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
+# All application enables within Django currently
 INSTALLED_APPS = [
     "as_django.apps.AsDjangoConfig",
     "django.contrib.admin",
@@ -73,7 +73,7 @@ WSGI_APPLICATION = "as_project.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases q
-
+# Edited database default settings to connect to MariaDB
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",

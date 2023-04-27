@@ -58,7 +58,7 @@
         <h3>Student Role Call</h3>
         <form action="" method="post">{% csrf_token %}
             {% for person in students%}
-            <input type="checkbox" name="{{ person.first_name }}_is_present" checked="y">
+            <input type="checkbox" name="{{ person.first_name }}_is_present">
             <label>{{person.first_name}} {{person.last_name}}</label>
             <br>
             {% endfor %}
